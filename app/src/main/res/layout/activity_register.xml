@@ -11,6 +11,8 @@
         android:id="@+id/toolbar"
         layout="@layout/bar_layout"/>
     <LinearLayout
+        android:padding="16dp"
+        android:gravity="center_horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/toolbar"
@@ -22,7 +24,7 @@
         android:text="Create a new Account"
         android:textColor="#000000"
         android:textSize="35dp"
-        android:background="#FDD835"
+        android:textStyle="bold"
 
         />
 
@@ -39,6 +41,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Email "
+            android:inputType="textEmailAddress"
             />
         <EditText
             android:layout_marginTop="10dp"
@@ -55,8 +58,8 @@
             android:layout_height="wrap_content"
             android:text="Register"
             android:textSize="20dp"
-            android:background="#FFB300"
-            android:textColor="#000000"
+            android:background="@color/colorPrimaryDark"
+            android:textColor="#fff"
             />
     </LinearLayout>
 

@@ -21,7 +21,7 @@
     <Button
         android:background="@color/colorPrimaryDark"
         android:layout_marginTop="100dp"
-        android:id="@+id/start_login"
+        android:id="@+id/login"
         android:textColor="#fff"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -30,8 +30,8 @@
     <Button
         android:textColor="#fff"
         android:background="@color/colorPrimaryDark"
-        android:layout_marginTop="5dp"
-        android:id="@+id/start_register"
+        android:layout_marginTop="10dp"
+        android:id="@+id/register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Regsiter"

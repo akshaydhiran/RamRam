@@ -31,7 +31,7 @@ public class UsersFragment extends Fragment {
 
     private RecyclerView recyclerView;
     private UserAdapter userAdapter;
-    private List<User> mUser;
+    private List<User> mUsers;
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -42,7 +42,7 @@ public class UsersFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        mUser = new ArrayList<>();
+        mUsers = new ArrayList<>();
 
         readUsers();
 
@@ -57,7 +57,7 @@ public class UsersFragment extends Fragment {
         reference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                mUser.clear();
+                mUsers.clear();
 
                 for(DataSnapshot snapshot : dataSnapshot.getChildren())
                 {
@@ -67,11 +67,11 @@ public class UsersFragment extends Fragment {
                     assert firebaseUser != null;
                     if(!user.getId().equals(firebaseUser.getUid()))
                     {
-                        mUser.add(user);
+                        mUsers.add(user);
                     }
                 }
 
-                userAdapter = new UserAdapter(getContext(),mUser);
+                userAdapter = new UserAdapter(getContext(),mUsers);
                 recyclerView.setAdapter(userAdapter);
             }
 

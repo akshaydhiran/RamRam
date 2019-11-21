@@ -1,19 +1,17 @@
 package com.akshaysingh5.ramram.Model;
 
-public class User
-{
+public class User {
     private String id;
-    private String imageURL;
     private String username;
+    private String imageURL;
 
-    public User(String id, String imageURL, String username) {
+    public User(String id, String username, String imageURL) {
         this.id = id;
-        this.imageURL = imageURL;
         this.username = username;
+        this.imageURL = imageURL;
     }
-    public User()
-    {
 
+    public User() {
     }
 
     public String getId() {
@@ -24,19 +22,19 @@ public class User
         this.id = id;
     }
 
-    public String getImageURL() {
-        return imageURL;
-    }
-
-    public void setImageURL(String imageURL) {
-        this.imageURL = imageURL;
-    }
-
     public String getUsername() {
         return username;
     }
 
     public void setUsername(String username) {
         this.username = username;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
     }
 }

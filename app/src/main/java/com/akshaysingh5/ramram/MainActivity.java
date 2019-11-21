@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
             {
                 User user = dataSnapshot.getValue(User.class);
                 username.setText(user.getUsername());
-
                 if(user.getImageURL().equals("default"))
                 {
                     profile_image.setImageResource(R.mipmap.ic_launcher);
@@ -125,12 +124,14 @@ public class MainActivity extends AppCompatActivity {
         }
 
         @Override
-        public Fragment getItem(int position) {
+        public Fragment getItem(int position)
+        {
             return fragments.get(position);
         }
 
         @Override
-        public int getCount() {
+        public int getCount()
+        {
             return fragments.size();
         }
         public void addFragment(Fragment fragment, String title)
@@ -143,7 +144,8 @@ public class MainActivity extends AppCompatActivity {
 
         @Nullable
         @Override
-        public CharSequence getPageTitle(int position) {
+        public CharSequence getPageTitle(int position)
+        {
             return titles.get(position);
         }
     }
