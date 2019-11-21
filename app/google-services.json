@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "621751529594",
+    "firebase_url": "https://ramram-cbc2c.firebaseio.com",
+    "project_id": "ramram-cbc2c",
+    "storage_bucket": "ramram-cbc2c.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:621751529594:android:d5c75d241bec4fc263cbc3",
+        "android_client_info": {
+          "package_name": "com.akshaysingh5.ramram"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "621751529594-g7bqhibmmb6b6964josckecl4lp6iuqm.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.akshaysingh5.ramram",
+            "certificate_hash": "6e0f6c373c774d9b6fc1d072c62810bb44b8ebc1"
+          }
+        },
+        {
+          "client_id": "621751529594-7it6cq7nhu7fune756p395kvfqmpl03g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAEWlGWBmgUhTW6KSCXwkfu28YnR_BN9O4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "621751529594-7it6cq7nhu7fune756p395kvfqmpl03g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
