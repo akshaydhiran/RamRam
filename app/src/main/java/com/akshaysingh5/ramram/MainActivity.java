@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.akshaysingh5.ramram.Fragments.ChatsFragment;
+import com.akshaysingh5.ramram.Fragments.ProfileFragment;
 import com.akshaysingh5.ramram.Fragments.UsersFragment;
 import com.akshaysingh5.ramram.Model.User;
 import com.bumptech.glide.Glide;
@@ -29,6 +30,7 @@ import androidx.fragment.app.FragmentPagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 import de.hdodenhof.circleimageview.CircleImageView;
 
@@ -84,6 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
         viewPagerAdapter.addFragment(new ChatsFragment(),"Chats");
         viewPagerAdapter.addFragment(new UsersFragment(),"Users");
+        viewPagerAdapter.addFragment(new ProfileFragment(),"Profile");
 
         viewPager.setAdapter(viewPagerAdapter);
 
@@ -103,9 +106,9 @@ public class MainActivity extends AppCompatActivity {
         {
             case R.id.logout:
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(MainActivity.this,StartActivity.class);
+                //change this code because app will crash
+                Intent intent = new Intent(MainActivity.this,StartActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
-                finish();
                 return true;
         }
         return false;
@@ -150,4 +153,25 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    private void status(String status)
+    {
+        reference = FirebaseDatabase.getInstance().getReference("Users").child(firebaseUser.getUid());
+
+        HashMap<String,Object> hashMap = new HashMap<>();
+        hashMap.put("status",status);
+
+        reference.updateChildren(hashMap);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        status("online");
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        status("offline");
+    }
 }
